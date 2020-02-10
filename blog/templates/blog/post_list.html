@@ -9,9 +9,13 @@
     <h1><a href="">Django tutorial</a></h1>
 </div>
 <div>
-    <p>published 202002101211</p>
-    <h2><a href="">my_first_post</a></h2>
-    <p>어쩌구저쩌</p>
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr}}</p>
+        </div>
+    {% endfor %}
 </div>
 <div>
     <p>published 202002101213</p>
